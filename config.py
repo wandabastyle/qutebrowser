@@ -21,9 +21,10 @@ config.source("themes/tokyonight_moon.py")
 
 # Use Chromium flags via qutebrowser (supported way)
 c.qt.args = [
-    "--ozone-platform=wayland",
-    "--ignore-gpu-blocklist",
-    "--enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL",
+    "enable-accelerated-video-decode",
+    "enable-features=AcceleratedVideoDecoder,VaapiVideoDecoder,VaapiIgnoreDriverChecks",
+    "disable-features=UseChromeOSDirectVideoDecoder,SurfaceControl",
+    "enable-zero-copy",
 ]
 c.qt.force_software_rendering = "none"
 
